@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Omgevingswet.io</title>
+</head>
+<body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Drempelwaardetest</title>
+</head>
+<body>
+  <h1>Drempelwaardetest</h1>
+
+  <label for="a">Categorie A (kg):</label>
+  <input type="number" id="a"><br><br>
+
+  <label for="b">Categorie B (kg):</label>
+  <input type="number" id="b"><br><br>
+
+  <label for="c">Categorie C (kg):</label>
+  <input type="number" id="c"><br><br>
+
+  <button onclick="toetsDrempelwaarde()">Toets drempelwaarde</button>
+
+  <p id="resultaat"></p>
+
+  <script>
+    function toetsDrempelwaarde() {
+      // Waarden ophalen
+      const a = parseFloat(document.getElementById("a").value) || 0;
+      const b = parseFloat(document.getElementById("b").value) || 0;
+      const c = parseFloat(document.getElementById("c").value) || 0;
+
+      let resultaat = "onder de drempelwaarde";
+
+      // Tweede drempelwaarde check (strengste eerst)
+      if (a > 10 || b > 20 || c > 40) {
+        resultaat = "boven de tweede drempelwaarde";
+      }
+      // Eerste drempelwaarde check
+      else if (a > 5 || b > 10 || c > 20) {
+        resultaat = "boven de eerste drempelwaarde";
+      }
+
+      // Resultaat tonen
+      document.getElementById("resultaat").innerText = resultaat;
+    }
+  </script>
+</body>
+
+</body>
+</html>
