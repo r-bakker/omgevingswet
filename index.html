@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Omgevingswet.io</title>
-</head>
-<body>
-
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <title>Drempelwaardetest</title>
@@ -26,29 +20,7 @@
 
   <p id="resultaat"></p>
 
-  <script>
-    function toetsDrempelwaarde() {
-      // Waarden ophalen
-      const a = parseFloat(document.getElementById("a").value) || 0;
-      const b = parseFloat(document.getElementById("b").value) || 0;
-      const c = parseFloat(document.getElementById("c").value) || 0;
-
-      let resultaat = "onder de drempelwaarde";
-
-      // Tweede drempelwaarde check (strengste eerst)
-      if (a > 10 || b > 20 || c > 40) {
-        resultaat = "boven de tweede drempelwaarde";
-      }
-      // Eerste drempelwaarde check
-      else if (a > 5 || b > 10 || c > 20) {
-        resultaat = "boven de eerste drempelwaarde";
-      }
-
-      // Resultaat tonen
-      document.getElementById("resultaat").innerText = resultaat;
-    }
-  </script>
-</body>
-
+  <!-- Hier laad je je externe script -->
+  <script src="drempelwaarde.js"></script>
 </body>
 </html>
